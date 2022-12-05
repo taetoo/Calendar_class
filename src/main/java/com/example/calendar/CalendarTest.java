@@ -50,9 +50,15 @@ public class CalendarTest {
         // Notyet Test
         System.out.println("\n================================\n");
         System.out.println("임의 날짜 테스트");
-        cal.set(Calendar.YEAR, 2022);
-        cal.set(Calendar.MONTH, 12-1);
-        cal.set(Calendar.DATE, 24);
+
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        cal.set(Calendar.YEAR, a);
+        cal.set(Calendar.MONTH, b-1);
+        cal.set(Calendar.DATE, c);
         int daysOfMonth3 = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         int dayOfWeek3 = cal.get(Calendar.DAY_OF_WEEK);
         int testDate = cal.get(Calendar.DATE);
