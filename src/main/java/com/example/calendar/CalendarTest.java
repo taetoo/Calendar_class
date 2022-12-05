@@ -42,7 +42,7 @@ public class CalendarTest {
         int dayOfWeek2 = cal.get(Calendar.DAY_OF_WEEK);
         korDayOfWeek = getYoil(korDayOfWeek, dayOfWeek2);
 
-        System.out.println("윤달: " + sdf.format(cal.getTime()) + korDayOfWeek + "요일 | 총 일수: " + daysOfMonth2);
+        System.out.println("윤달: " + sdf.format(cal.getTime()) + korDayOfWeek + "요일 | 총 일수 " + daysOfMonth2);
         System.out.println("거주 일수: " + yundalDate + " | 남은 일수: " + (daysOfMonth2 - yundalDate) + "일");
 
 
@@ -53,9 +53,12 @@ public class CalendarTest {
         cal.set(Calendar.YEAR, 2022);
         cal.set(Calendar.MONTH, 12-1);
         cal.set(Calendar.DATE, 24);
+        int daysOfMonth3 = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         int dayOfWeek3 = cal.get(Calendar.DAY_OF_WEEK);
+        int testDate = cal.get(Calendar.DATE);
         korDayOfWeek = getYoil(korDayOfWeek, dayOfWeek3);
-        System.out.println( sdf2.format(cal.getTime()) + korDayOfWeek + "요일");
+        System.out.println( sdf2.format(cal.getTime()) + korDayOfWeek + "요일" + " | 총 일수 " + daysOfMonth3);
+        System.out.println("거주 일수: " + testDate + " | 남은 일수: " + (daysOfMonth3 - testDate));
 
     }
 
